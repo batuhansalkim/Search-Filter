@@ -28,9 +28,12 @@ function App() {
             </tr>
           </thead>
           <tbody>
+            
             {
+              // data.filter((user)=>{
+              //   return search.toLowerCase() == '' ? user : user.first_name.toLowerCase().includes(search)
               data.filter((user)=>{
-                
+                return search.toLowerCase() == "" ? user : user.first_name.includes(search)
               }).map((user)=>(
                 <tr key={user.id}>
                   <td>{user.first_name}</td>
